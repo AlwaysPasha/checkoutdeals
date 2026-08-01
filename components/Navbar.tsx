@@ -7,9 +7,7 @@ import { cn } from "@/lib/utils";
 import DarkModeToggle from "./DarkModeToggle";
 
 const links = [
-  { href: "/deals", label: "Deals" },
-  { href: "/categories", label: "Categories" },
-  { href: "/stores", label: "Stores" },
+  { href: "/#products", label: "Browse Products" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -19,7 +17,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-[#0b0b0d]/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-[#0b0b0d]/80 backdrop-blur-md shadow-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16" aria-label="Main">
         <Link href="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-white font-bold text-lg">
@@ -32,7 +30,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-1">
           {links.map((link) => {
-            const active = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+            const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
@@ -53,10 +51,10 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <DarkModeToggle />
           <Link
-            href="/deals"
-            className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark transition-colors shadow-sm hover:shadow-md"
+            href="/#products"
+            className="rounded-full bg-gradient-to-b from-brand to-brand-dark px-4 py-2 text-sm font-semibold text-white shadow-sm hover:shadow-md hover:brightness-105 active:brightness-95 transition-all"
           >
-            Browse Deals
+            Shop Now
           </Link>
         </div>
 
@@ -82,7 +80,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={cn(
           "md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#0b0b0d]",
@@ -101,11 +98,11 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/deals"
+            href="/#products"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-full bg-brand px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-brand-dark transition-colors"
+            className="mt-2 rounded-full bg-gradient-to-b from-brand to-brand-dark px-4 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:shadow-md transition-all"
           >
-            Browse Deals
+            Shop Now
           </Link>
         </div>
       </div>

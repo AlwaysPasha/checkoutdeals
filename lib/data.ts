@@ -1,67 +1,23 @@
-import { Category, Deal, Store } from "./types";
+import { Product } from "./types";
 
-/** Build a placeholder product image URL with a solid background and centered label. */
-function img(label: string, bg = "FF6B00", fg = "FFFFFF"): string {
-  const text = encodeURIComponent(label);
-  return `https://placehold.co/600x600/${bg}/${fg}?text=${text}&font=roboto`;
-}
-
-export const categories: Category[] = [
-  { slug: "electronics", name: "Electronics", icon: "🔌", description: "TVs, headphones, cameras & smart gadgets" },
-  { slug: "fashion", name: "Fashion", icon: "👗", description: "Clothing, footwear & accessories" },
-  { slug: "mobiles", name: "Mobiles", icon: "📱", description: "Smartphones from every top brand" },
-  { slug: "laptops", name: "Laptops", icon: "💻", description: "Laptops & computer accessories" },
-  { slug: "home-kitchen", name: "Home & Kitchen", icon: "🏠", description: "Appliances & everyday essentials" },
-  { slug: "travel", name: "Travel", icon: "✈️", description: "Flights, hotels & holiday packages" },
-  { slug: "beauty", name: "Beauty", icon: "💄", description: "Skincare, makeup & personal care" },
-  { slug: "food", name: "Food", icon: "🍔", description: "Food delivery & dining offers" },
-  { slug: "gaming", name: "Gaming", icon: "🎮", description: "Consoles, games & accessories" },
-  { slug: "subscriptions", name: "Subscriptions", icon: "🎬", description: "Streaming, music & OTT plans" },
+export const products: Product[] = [
+  { id: "mama-bear-baby-wipes", category: "baby-essentials", name: "Mama Bear Baby Wipes", description: "Soft and convenient baby cleansing wipes designed for everyday cleaning and diaper changes.", image: "/products/mama-bear-baby-wipes.webp", amazonAffiliateUrl: "https://link.amazon/A0eFOBpEU" },
+  { id: "littles-soft-cleansing-baby-wipes", category: "baby-essentials", name: "Little's Soft Cleansing Baby Wipes", description: "Extra thick and moist baby wipes enriched with Aloe Vera, Vitamin E and Jojoba Oil for gentle everyday cleansing. Pack of 6 with 480 wipes total.", image: "/products/littles-soft-cleansing-baby-wipes.webp", amazonAffiliateUrl: "https://link.amazon/B02QLXCKP" },
+  { id: "pampers-new-baby", category: "baby-essentials", name: "Pampers Baby Diapers", description: "Comfortable baby diapers designed for everyday use, helping keep your little one dry and comfortable.", image: "/products/pampers-new-baby.webp", amazonAffiliateUrl: "https://link.amazon/B0i8RVOmm" },
+  { id: "chicco-toothbrush-6-36-months", category: "baby-essentials", name: "Chicco Baby Toothbrush 6–36 Months", description: "Baby toothbrush designed for children aged 6 to 36 months with a child-friendly design for early oral care.", image: "/products/chicco-toothbrush-6-36-months.webp", amazonAffiliateUrl: "https://link.amazon/B0bNkV9am" },
+  { id: "chicco-toothpaste-1-6-years", category: "baby-essentials", name: "Chicco Kids Toothpaste 1–6 Years", description: "Children's toothpaste designed for everyday oral care for kids aged 1 to 6 years.", image: "/products/chicco-toothpaste-1-6-years.webp", amazonAffiliateUrl: "https://link.amazon/B0dkgI83E" },
+  { id: "littloo-baby-finger-toothbrush", category: "baby-essentials", name: "Littloo Silicone Baby Finger Toothbrush", description: "100% silicone infant finger toothbrush for gently cleaning and massaging baby's gums. BPA-free pack of 2 with storage case.", image: "/products/littloo-baby-finger-toothbrush.webp", amazonAffiliateUrl: "https://link.amazon/B08pxiQUQ" },
+  { id: "baby-safety-strip-edge-guard", category: "baby-essentials", name: "Baby Safety Furniture Edge Guard", description: "Cushioned furniture edge guard designed to cover sharp furniture edges and corners around the home.", image: "/products/baby-safety-strip-edge-guard.webp", amazonAffiliateUrl: "https://link.amazon/B0atb7IoG" },
+  { id: "tedibar-moisturising-baby-bathing-bar", category: "baby-essentials", name: "Tedibar Moisturising Baby Bathing Bar", description: "Gentle moisturising bathing bar designed for baby's delicate skin and everyday bath time.", image: "/products/tedibar-moisturising-baby-bathing-bar.webp", amazonAffiliateUrl: "https://link.amazon/B0iIegUHI" },
+  { id: "tedibar-no-tear-baby-shampoo", category: "baby-essentials", name: "Spoo Baby Shampoo by Tedibar", description: "No-tear formula baby shampoo designed for gentle cleansing during baby's regular bath routine.", image: "/products/tedibar-no-tear-baby-shampoo.webp", amazonAffiliateUrl: "https://link.amazon/B06GvXOlZ" },
+  { id: "omron-nec-106-nebulizer", category: "baby-essentials", name: "Omron NEC-106 Compressor Nebulizer", description: "Ultra-compact, low-noise compressor nebulizer designed for use by children and adults.", image: "/products/omron-nec-106-nebulizer.webp", amazonAffiliateUrl: "https://link.amazon/B06Mv6CwW" },
+  { id: "babypro-baby-head-safety-helmet", category: "baby-essentials", name: "Baby Head Safety Helmet", description: "Protective cushioned baby headgear designed for infants aged approximately 6 months to 2 years while learning to crawl, stand and walk.", image: "/products/babypro-baby-head-safety-helmet.webp", amazonAffiliateUrl: "https://link.amazon/B0aHl3Yvw" },
+  { id: "philips-avent-classic-soft-spout-cup", category: "baby-essentials", name: "Philips Avent Classic Spout Cup – 200ml", description: "Soft polypropylene spout cup designed to help little ones transition toward independent drinking.", image: "/products/philips-avent-classic-soft-spout-cup.webp", amazonAffiliateUrl: "https://link.amazon/B0cJ5ih9H" },
+  { id: "luvlap-adaptable-potty-training-seat", category: "baby-essentials", name: "LuvLap 2-in-1 Potty Training Seat", description: "Adaptable potty training seat for children aged 1 year and above with a detachable potty bowl, suitable for boys and girls.", image: "/products/luvlap-adaptable-potty-training-seat.webp", amazonAffiliateUrl: "https://link.amazon/B042vzpY2" },
+  { id: "aveeno-baby-daily-moisturising-lotion", category: "baby-essentials", name: "Aveeno Baby Daily Moisturising Lotion – 227g", description: "Daily baby moisturising lotion with natural oatmeal, formulated for delicate and sensitive skin. Fragrance-free and hypoallergenic.", image: "/products/aveeno-baby-daily-moisturising-lotion.webp", amazonAffiliateUrl: "https://link.amazon/B0es4Ikcx" },
+  { id: "babygo-silicone-teether-set", category: "baby-essentials", name: "BabyGo Teething Toys – Pack of 3", description: "BPA-free baby teething toys designed to provide a safe and gentle chewing surface for little ones during teething.", image: "/products/babygo-silicone-teether-set.webp", amazonAffiliateUrl: "https://link.amazon/B0e7X4aLL" },
+  { id: "storio-geometric-angle-blocks", category: "baby-essentials", name: "Storio Geometric Sorting & Stacking Blocks – 26 Pieces", description: "Colorful sorting and stacking educational toy designed to encourage shape recognition, coordination and early learning for toddlers.", image: "/products/storio-geometric-angle-blocks.webp", amazonAffiliateUrl: "https://link.amazon/B0df27pAU" },
+  { id: "slurrp-farm-choco-ragi-cookies", category: "baby-essentials", name: "Slurrp Farm Choco Ragi Multigrain Cookies – 80g", description: "Kids' multigrain cookies made with ragi, jowar and whole wheat flour, with no maida and no palm oil.", image: "/products/slurrp-farm-choco-ragi-cookies.webp", amazonAffiliateUrl: "https://link.amazon/B04AreHdc" },
+  { id: "gadda-co-waterproof-mattress-protector", category: "baby-essentials", name: "GADDA CO Waterproof Mattress Protector – 72 × 60 Inch", description: "Waterproof mattress protector with a soft cotton-feel surface, breathable construction and fitted design for mattresses up to 10 inches deep.", image: "/products/gadda-co-waterproof-mattress-protector.webp", amazonAffiliateUrl: "https://link.amazon/B09MyQOpn" },
+  { id: "panca-stainless-steel-drying-hanger", category: "baby-essentials", name: "PANCA Stainless Steel Clothes Drying Hanger – 25 Clips", description: "Space-saving stainless steel hanging dryer with 25 clips, useful for drying baby clothes, undergarments and other small laundry items.", image: "/products/panca-stainless-steel-drying-hanger.webp", amazonAffiliateUrl: "https://link.amazon/B00HAOrM0" },
 ];
-
-export const stores: Store[] = [
-  { slug: "amazon", name: "Amazon", color: "232F3E", description: "Everything store with daily deals across every category." },
-  { slug: "flipkart", name: "Flipkart", color: "2874F0", description: "India's homegrown marketplace for electronics & fashion." },
-  { slug: "myntra", name: "Myntra", color: "FF3F6C", description: "Fashion and lifestyle destination for trending styles." },
-  { slug: "ajio", name: "Ajio", color: "2A2A72", description: "Curated fashion from national and international brands." },
-  { slug: "croma", name: "Croma", color: "00A19C", description: "Electronics superstore for gadgets and appliances." },
-  { slug: "reliance-digital", name: "Reliance Digital", color: "E4002B", description: "One-stop shop for electronics and home appliances." },
-  { slug: "nykaa", name: "Nykaa", color: "FC2779", description: "Beauty and wellness products from top brands." },
-  { slug: "firstcry", name: "FirstCry", color: "6EC531", description: "Everything for babies, kids & parents." },
-  { slug: "tata-cliq", name: "Tata CLiQ", color: "E31E24", description: "Premium fashion and electronics marketplace." },
-  { slug: "apple", name: "Apple", color: "111111", description: "iPhones, MacBooks, iPads and accessories." },
-  { slug: "samsung", name: "Samsung", color: "1428A0", description: "Galaxy phones, TVs and smart home devices." },
-  { slug: "boat", name: "boAt", color: "E30613", description: "Audio gear and wearables for everyday life." },
-  { slug: "nike", name: "Nike", color: "111111", description: "Footwear and sportswear for every athlete." },
-  { slug: "adidas", name: "Adidas", color: "000000", description: "Sportswear, sneakers and performance gear." },
-];
-
-export const deals: Deal[] = [];
-
-export function getDealBySlug(slug: string): Deal | undefined {
-  return deals.find((d) => d.slug === slug);
-}
-
-export function getStoreBySlug(slug: string): Store | undefined {
-  return stores.find((s) => s.slug === slug);
-}
-
-export function getCategoryBySlug(slug: string): Category | undefined {
-  return categories.find((c) => c.slug === slug);
-}
-
-export function dealsForStore(slug: string): Deal[] {
-  return deals.filter((d) => d.storeSlug === slug);
-}
-
-export function dealsForCategory(slug: string): Deal[] {
-  return deals.filter((d) => d.categorySlug === slug);
-}
-
-export function storeDealCount(slug: string): number {
-  return deals.filter((d) => d.storeSlug === slug).length;
-}
-
-export function categoryDealCount(slug: string): number {
-  return deals.filter((d) => d.categorySlug === slug).length;
-}

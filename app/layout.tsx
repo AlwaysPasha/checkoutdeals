@@ -7,29 +7,32 @@ const siteUrl = "https://checkoutdeals.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   title: {
-    default: "CheckOutDeals — Never Pay Full Price Again",
+    default: "CheckOutDeals — Baby Essentials",
     template: "%s | CheckOutDeals",
   },
   description:
-    "Discover today's best online deals, discounts, coupon codes, flash sales and cashback offers from Amazon, Flipkart, Myntra, Apple, Samsung and more — all in one place.",
+    "Carefully selected Baby Essentials products for babies and new parents — wipes, diapering, oral care, safety, bath & skincare, feeding, teething, and more.",
   keywords: [
-    "deals",
-    "discounts",
-    "coupon codes",
-    "cashback offers",
-    "flash sales",
-    "online shopping deals",
-    "best deals india",
+    "baby essentials",
+    "baby products",
+    "new parents",
+    "baby wipes",
+    "diapering",
+    "baby safety",
+    "baby skincare",
   ],
   authors: [{ name: "CheckOutDeals" }],
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: "CheckOutDeals",
-    title: "CheckOutDeals — Never Pay Full Price Again",
+    title: "CheckOutDeals — Baby Essentials",
     description:
-      "Discover today's best online deals, discounts, coupon codes, flash sales and cashback offers — all in one place.",
+      "Carefully selected Baby Essentials products for babies and new parents.",
     images: [
       {
         url: "https://placehold.co/1200x630/FF6B00/FFFFFF?text=CheckOutDeals",
@@ -41,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CheckOutDeals — Never Pay Full Price Again",
+    title: "CheckOutDeals — Baby Essentials",
     description:
-      "Discover today's best online deals, discounts, coupon codes, flash sales and cashback offers — all in one place.",
+      "Carefully selected Baby Essentials products for babies and new parents.",
     images: ["https://placehold.co/1200x630/FF6B00/FFFFFF?text=CheckOutDeals"],
   },
   icons: {
@@ -59,7 +62,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
-        {/* Set dark mode class before paint to avoid flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var m=localStorage.getItem('cod-theme');if(m==='dark'||(!m&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();`,

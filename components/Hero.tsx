@@ -1,104 +1,17 @@
-import Link from "next/link";
-
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#0b0b0d]">
-      {/* Background Glow */}
-      <div
-        aria-hidden="true"
-        className="absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-orange-500/10 blur-3xl"
-      />
-
-      <div className="relative mx-auto max-w-6xl px-6 py-24 text-center">
-        <div className="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-medium text-orange-600 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-300">
-          🇮🇳 India's Smart Deal Discovery Platform
-        </div>
-
-        <h1 className="mt-8 text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-6xl lg:text-7xl">
-          Never Pay
-          <span className="block text-orange-500">
-            Full Price Again.
-          </span>
-        </h1>
-
-        <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-neutral-600 dark:text-neutral-400">
-          Discover verified deals, coupon codes, cashback offers, and price drops
-from India's leading online stores. Save money on every purchase with
-carefully curated offers.
-        </p>
-
-        <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
-          <Link
-            href="/stores"
-            className="rounded-xl bg-orange-500 px-8 py-4 text-base font-semibold text-white transition hover:bg-orange-600"
-          >
-            Browse Stores
-          </Link>
-
-          <Link
-            href="/categories"
-            className="rounded-xl border border-neutral-300 px-8 py-4 text-base font-semibold hover:border-orange-500 hover:text-orange-500 dark:border-neutral-700"
-          >
-            Explore Categories
-          </Link>
-        </div>
-
-        <div className="mt-16 grid grid-cols-1 gap-6 text-left sm:grid-cols-3">
-          <div className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
-            <div className="text-3xl">🏷️</div>
-            <h3 className="mt-4 font-semibold text-lg">
-              Verified Deals
-            </h3>
-            <p className="mt-2 text-sm text-neutral-500">
-              Only genuine offers from trusted online stores.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
-            <div className="text-3xl">⚡</div>
-            <h3 className="mt-4 font-semibold text-lg">
-              Fresh Offers
-            </h3>
-            <p className="mt-2 text-sm text-neutral-500">
-              We continuously add new deals and discounts from trusted retailers.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
-            <div className="text-3xl">💰</div>
-            <h3 className="mt-4 font-semibold text-lg">
-              Save More
-            </h3>
-            <p className="mt-2 text-sm text-neutral-500">
-              Find the best prices before making your next purchase.
-            </p>
-          </div>
-
-          <div className="mt-16 text-center">
-  <p className="text-sm uppercase tracking-widest text-neutral-500">
-    Trusted stores we'll feature
-  </p>
-
-  <div className="mt-6 flex flex-wrap justify-center gap-3">
-    {[
-      "Amazon",
-      "Flipkart",
-      "Myntra",
-      "Ajio",
-      "Croma",
-      "Reliance Digital",
-      "Nykaa",
-      "FirstCry",
-    ].map((store) => (
-      <span
-        key={store}
-        className="rounded-full border border-neutral-300 px-4 py-2 text-sm dark:border-neutral-700"
-      >
-        {store}
-      </span>
-    ))}
-  </div>
-</div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-sky-50/70 via-white to-white dark:from-neutral-950 dark:via-[#0b0b0d] dark:to-[#0b0b0d]">
+      <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-sky-100 dark:bg-sky-500/10 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-orange-50 dark:bg-orange-500/10 blur-3xl" />
+      <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-50 px-4 py-1.5 text-xs font-semibold text-sky-700 ring-1 ring-sky-100 dark:bg-sky-500/10 dark:text-sky-300 dark:ring-sky-500/20">🍼 Curated for parents</span>
+        <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl md:text-6xl">Baby Essentials</h1>
+        <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 sm:text-xl">Handpicked everyday essentials for your little one.</p>
+        <div className="mt-8">
+          <a href="#products" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-brand to-brand-dark px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:brightness-105 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+            Browse Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4"><path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m0 0-6-6m6 6 6-6" /></svg>
+          </a>
         </div>
       </div>
     </section>
